@@ -45,6 +45,6 @@ Route::prefix("/dosen")->group(function(){
         echo "Jadwal Dosen";
     });
     Route::get("/materi" , function(){
-        echo "Materi Dosen";
+        echo "Materi Dosen!";
     });
 });

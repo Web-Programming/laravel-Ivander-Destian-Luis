@@ -8,7 +8,7 @@
     <body class="antialiased">
         <div>
             Ivander
-            <a href="http://127.0.0.1:8000/profil"><button type="button">Mau Ke Profil</button></a>
+            <a href="http://127.0.0.1:8000/fakultas"><button type="button">Mau Ke Fakultas</button></a>
         </div>
     </body>
 </html>

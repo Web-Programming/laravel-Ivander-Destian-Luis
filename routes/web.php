@@ -79,3 +79,5 @@ Route::get('/prodi' , [ProdiController::class, 'index']);
 Route::resource('/kurikulum', KurikulumController::class);
 
 Route::apiResource('/dosen' , DosenController::class);
+
+Route::get('/prodi/all-join-facade', [ProdiController::class,'allJoinFacade']);

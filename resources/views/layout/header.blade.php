@@ -9,5 +9,5 @@
 </head>
 <body>
 
-<h1>{{ $kampus }}</h1>
+<h1>Universitas MDP</h1>
     <hr>

@@ -54,15 +54,15 @@ Route::get('/', function () {
 //     });
 // });
 
-Route::get('/dosen' , function(){
+Route::get('/dosen', function () {
     return view('dosen');
 });
 
-Route::get('/dosen/index' , function(){
+Route::get('/dosen/index', function () {
     return view('dosen.index');
 });
 
-Route::get('/fakultas',function(){
+Route::get('/fakultas', function () {
     // return view('fakultas.index' , ["ilkom" => "Fakultas Ilmu Komputer dan Rekayasa"]);
 
     // return view('fakultas.index' , ["fakultas" => ["Fakultas Ilmu Komputer dan Rekayasa" , "Fakultas Ilmu Ekonomi"]]);
@@ -70,15 +70,28 @@ Route::get('/fakultas',function(){
     // return view('fakultas.index' ) ->with("fakultas" ,["Fakultas Ilmu Komputer dan Rekayasa" , "Fakultas Ilmu Ekonomi"]);
     // $fakultas = [];
     $kampus = "Universitas Multi Data Palembang";
-    $fakultas = ["Fakultas Ilmu Komputer dan Reakyasa" , "Fakultas Ilmu Ekonomi"];
-    return view('fakultas.index' , compact('fakultas' , 'kampus'));
-
+    $fakultas = ["Fakultas Ilmu Komputer dan Reakyasa", "Fakultas Ilmu Ekonomi"];
+    return view('fakultas.index', compact('fakultas', 'kampus'));
 });
 
-Route::get('/prodi' , [ProdiController::class, 'index']);
+Route::get('/prodi', [ProdiController::class, 'index']);
 
 Route::resource('/kurikulum', KurikulumController::class);
 
-Route::apiResource('/dosen' , DosenController::class);
+Route::apiResource('/dosen', DosenController::class);
 
-Route::get('/prodi/all-join-facade', [ProdiController::class,'allJoinFacade']);
+Route::get('/prodi/all-join-facade', [ProdiController::class, 'allJoinFacade']);
+
+Route::get('/prodi/create', [ProdiController::class, 'create']);
+
+Route::post('prodi/store', [ProdiController::class, 'store']);
+
+Route::get('/prodi', [ProdiController::class, 'index'])->name('prodi.index');
+
+Route::get('/prodi/{prodi}', [ProdiController::class, 'show'])->name('prodi.show');
+
+Route::get('/prodi/{prodi}/edit', [ProdiController::class, 'edit'])->name('prodi.edit');
+
+Route::patch('/prodi/{prodi}', [ProdiController::class, 'update'])->name('prodi.update');
+
+Route::delete('/prodi/{prodi}', [ProdiController::class, 'destroy'])->name('prodi.destroy');

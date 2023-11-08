@@ -9,5 +9,5 @@
 </head>
 <body>
 
-<h1>Universitas MDP</h1>
+<h1>Universitas MUlti Data Palembang</h1>
     <hr>
